@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/* ----- 
+
+style.css
+
+Nightfall: 324856
+
+Night Sky: 003853
+
+Celadon: 037367
+
+Space Blue: 023459
+
+Caribbean: 1E646E
+
+------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 93vh;
+    width: 100%;
+    max-width: none;
+}
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 30px;
+}
+
+h2 {
+    font-size: 3em;
+    display: block;
+    font-weight: 300;
+}
+
+p {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+ul {
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1D1D1D;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111
+}
+
+body {
+    background-color: #003853;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+
+#world-map{
+    background-color: #023459;
+    height: auto;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+svg path{
+    fill: #1E646E;
+    stroke: #eee;
+    stroke-width: .5;
+}
+
+svg path:hover {
+    fill: #21F5FF;
+    transition: 0.3s;
+    cursor: crosshair;
+}
+
+.travelled {
+    fill: #D66C44
+}
