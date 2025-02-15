@@ -6,6 +6,68 @@
 <link href="travel-blog.css" rel="stylesheet" type="text/css">
 </head>
 
+<!-- Add this modal container before </body> -->
+<div id="countryModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="countryName"></h2>
+    <div id="countryMedia" class="media-grid"></div>
+    <div id="countryCommentary"></div>
+  </div>
+</div>
+
+<!-- Update your world map section -->
+<section id="world-map">
+  <svg ...> (keep your existing SVG paths) </svg>
+</section>
+
+<script>
+// Country content data - you'll populate this with your actual content
+const countryContent = {
+  "AE": {
+    name: "United Arab Emirates",
+    media: ["dubai1.jpg", "dubai2.jpg"],
+    commentary: "My amazing experience in Dubai..."
+  },
+  "AU": {
+    name: "Australia",
+    media: ["sydney.jpg", "outback.jpg"],
+    commentary: "Adventures down under..."
+  }
+  // Add more countries as needed
+};
+
+// Modal handling
+const modal = document.getElementById('countryModal');
+const span = document.querySelector('.close');
+
+document.querySelectorAll('.travelled').forEach(country => {
+  country.addEventListener('click', function() {
+    const countryCode = this.id;
+    const content = countryContent[countryCode];
+    
+    if(content) {
+      document.getElementById('countryName').textContent = content.name;
+      document.getElementById('countryCommentary').textContent = content.commentary;
+      
+      // Populate media
+      const mediaGrid = document.getElementById('countryMedia');
+      mediaGrid.innerHTML = content.media.map(img => `
+        <img src="images/${img}" class="media-item" alt="${content.name}">
+      `).join('');
+      
+      modal.style.display = "block";
+    }
+  });
+});
+
+// Close modal
+span.onclick = () => modal.style.display = "none";
+window.onclick = (event) => {
+  if (event.target == modal) modal.style.display = "none";
+}
+</script>
+    
 <body>
     <header id="nav"> 
         <nav class="nav-bar">
